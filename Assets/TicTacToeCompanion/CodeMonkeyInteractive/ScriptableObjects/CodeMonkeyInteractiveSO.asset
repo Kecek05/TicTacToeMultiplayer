@@ -38,6 +38,20 @@ MonoBehaviour:
     state: 2
   - quizSO: {fileID: 11400000, guid: a0c7a8c554f37f24fa68a6612efad067, type: 2}
     state: 2
+  - quizSO: {fileID: 11400000, guid: e326a54e9d0cc5f478355d764b876c9e, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: ae38e5dbc06ac2946ae7466b7fcdc735, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 6d11af9b644cb03448a625b07495f54d, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 0c778d72d7239604abe51333ef1c7dcf, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 656981bf6494e2247bd7b8d966ccddab, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: b4fb900d9975ba343af3594cb27c559a, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: d2a26f2983b9a644c9d335298489e35f, type: 2}
+    state: 2
   frequentlyAskedQuestionStateList:
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 351da3a185159474aa34eb6900655117, type: 2}
     state: 2
@@ -64,6 +78,20 @@ MonoBehaviour:
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: b45b7d1296cb8dc45a800fad08d22459, type: 2}
     state: 2
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 57819f13183d9a24e9aa1c985f8fae99, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 7430acc413841644495c41e8d78d59bf, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: c9556a85b5b88ac43bb182772a098816, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 59ca0f381c9667e45a2e6c82d411158a, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: cfc28790155f10d459c70e040b530cf7, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 69c13ba2a9e145048b300711914cea4f, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 6af2963eaccfc4e49863a00764ba205a, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 76df7369b227aad429a41b20242250fe, type: 2}
     state: 2
   exerciseStateList: []
   lectureListSO: {fileID: 11400000, guid: c1af4d7cadebe754fa5ac3880e0890f9, type: 2}
