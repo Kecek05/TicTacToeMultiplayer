@@ -26,9 +26,8 @@ public class GameVisualManager : NetworkBehaviour
     private void SpawnObjectRpc(int x, int y)
     {
         Debug.Log("SpawnObject");
-        GameObject spawnedCrossObject = Instantiate(crossPrefab);
+        GameObject spawnedCrossObject = Instantiate(crossPrefab, GetGridWorldPosition(x, y), Quaternion.identity);
         spawnedCrossObject.transform.GetComponent<NetworkObject>().Spawn(true);
-        spawnedCrossObject.transform.position = GetGridWorldPosition(x, y);
     }
 
     private Vector2 GetGridWorldPosition(int x, int y)
