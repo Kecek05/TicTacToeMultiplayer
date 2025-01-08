@@ -226,7 +226,7 @@ MonoBehaviour:
   defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
   activeExerciseSO: {fileID: 0}
   lastSelectedLectureSO: {fileID: 11400000, guid: 6fc759f58cb035a42971e7728e7e0b56, type: 2}
-  checkedLastUpdateTimestamp: 1736368000
+  checkedLastUpdateTimestamp: 1736377319
   lastUpdateVersion: 1.00
   lastQOTDResponse:
     questionId: 138
@@ -236,7 +236,7 @@ MonoBehaviour:
     answerC: Jumping-Signal Over Nonce, crypto concept
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1736368000
+  lastQotdTimestamp: 1736377319
   websiteLatestMessage:
     text: 'Hi there!
 
@@ -252,11 +252,11 @@ MonoBehaviour:
 
       Join the <b>Private Discord</b> and <b>Weekly Private Livestreams</b>
       where I''m there to answer any questions you have.<br><a href=''https://cmonkey.co/tictactoeprivate''>https://cmonkey.co/tictactoeprivate</a>'
-  websiteLatestMessageTimestamp: 1736368000
+  websiteLatestMessageTimestamp: 1736377319
   websiteDynamicMessage:
     text: <u>Fresh Assets on Sale!</u>
     url: https://cmonkey.co/unityassetstore
-  websiteDynamicMessageTimestamp: 1736368000
+  websiteDynamicMessageTimestamp: 1736377319
   websiteLatestVideos:
     videos:
     - youTubeId: YmUnXsOp_t0
@@ -268,7 +268,7 @@ MonoBehaviour:
       title: The BEST of 2024!
     - youTubeId: 5xmbdWYlSkI
       title: TOP 20 Visual Assets to INSPIRE YOU! (DECEMBER 2024)
-  websiteLatestVideosTimestamp: 1736368000
+  websiteLatestVideosTimestamp: 1736377319
   lastChatAIQuestionAsked: What is Netcode for Game Objects?
   lastChatAIQuestionAnswer: 'Netcode for Game Objects is Unity''s own networking
     toolstack designed for small-scale co-op games. It''s the simplest networking
