@@ -336,6 +336,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dae26add10b12543bc91841fc6fbf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crossArrowGameObject: {fileID: 215549228}
+  circleArrowGameObject: {fileID: 1799001722}
+  crossYouTxtGameObject: {fileID: 689303827}
+  circleYouTxtGameObject: {fileID: 1343522683}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
