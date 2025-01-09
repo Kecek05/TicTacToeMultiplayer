@@ -24,10 +24,11 @@ public class GameManager : NetworkBehaviour
     public class OnGameWinEventArgs : EventArgs
     {
         public Line line;
+        public PlayerType winPlayerType;
     }
 
     public event EventHandler OnCurrentPlayablePlayerTypeChanged;
-
+    public event EventHandler OnRematch;
 
     public enum PlayerType
     {
@@ -173,8 +174,6 @@ public class GameManager : NetworkBehaviour
     [Rpc(SendTo.Server)]
     public void ClickedOnGridPositionRpc(int x, int y, PlayerType playerType)
     {
-        Debug.Log($"Clicked in X: {x} Y: {y} Player: {playerType}");
-
         if (playerType != currentPlayablePlayerType.Value) return; // Not the turn of the player
 
         if (playerTypeArray[x, y] != PlayerType.None) return; // Already occupied
@@ -198,6 +197,18 @@ public class GameManager : NetworkBehaviour
         TestWinner();
     }
 
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnGameWinRpc(int lineIndex, PlayerType winPlayerType)
+    {
+        Line line = lineList[lineIndex];
+
+        OnGameWin?.Invoke(this, new OnGameWinEventArgs
+        {
+            line = line,
+            winPlayerType = winPlayerType,
+        });
+    }
+
     private bool TestWinnerLine(Line line)
     {
         return TestWinnerLine(
@@ -213,16 +224,39 @@ public class GameManager : NetworkBehaviour
 
     private void TestWinner()
     {
-        foreach (Line line in lineList)
+        for(int i = 0; i<lineList.Count; i++)
         {
+            Line line = lineList[i];
             if (TestWinnerLine(line))
             {
                 //Win!
                 currentPlayablePlayerType.Value = PlayerType.None;
-                OnGameWin?.Invoke(this, new OnGameWinEventArgs { line = line });
+                TriggerOnGameWinRpc(i, playerTypeArray[line.centerGridPosition.x, line.centerGridPosition.y]);
                 break;
             }
         }
+    }
+
+    [Rpc(SendTo.Server)]
+    public void RematchRpc()
+    {
+        for (int x = 0; x < playerTypeArray.GetLength(0); x++)
+        {
+            for (int y = 0; y < playerTypeArray.GetLength(1); y++)
+            {
+                playerTypeArray[x, y] = PlayerType.None;
+            }
+        }
+
+        currentPlayablePlayerType.Value = PlayerType.Cross;
+        TriggerOnRematchRpc();
+    }
+
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnRematchRpc()
+    {
+        OnRematch?.Invoke(this, EventArgs.Empty);
     }
 
 

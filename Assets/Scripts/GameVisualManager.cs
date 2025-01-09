@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -10,15 +12,37 @@ public class GameVisualManager : NetworkBehaviour
     [SerializeField] private GameObject circlePrefab;
     [SerializeField] private GameObject lineCompletePrefab;
 
+    private List<GameObject> visualGameObjectList;
+
+    private void Awake()
+    {
+        visualGameObjectList = new List<GameObject>();
+    }
 
     private void Start()
     {
         GameManager.Instance.OnClickedOnGridPosition += GameManager_OnClickedOnGridPosition;
         GameManager.Instance.OnGameWin += GameManager_OnGameWin;
+        GameManager.Instance.OnRematch += GameManager_OnRematch;
     }
+
+
+    private void GameManager_OnRematch(object sender, System.EventArgs e)
+    {
+        if(!NetworkManager.Singleton.IsServer) return;
+
+        foreach (GameObject visualGameObject in visualGameObjectList)
+        {
+            Destroy(visualGameObject);
+        }
+        visualGameObjectList.Clear();
+    }
+
 
     private void GameManager_OnGameWin(object sender, GameManager.OnGameWinEventArgs e)
     {
+        if (!NetworkManager.Singleton.IsServer) return;
+
         float euleZ = 0f;
         switch(e.line.orientation)
         {
@@ -37,13 +61,14 @@ public class GameVisualManager : NetworkBehaviour
                 break;
 
         }
-        GameObject likneCompleteGameObject = Instantiate(lineCompletePrefab, GetGridWorldPosition(e.line.centerGridPosition.x, e.line.centerGridPosition.y), Quaternion.Euler(0,0,euleZ));
-        lineCompletePrefab.transform.GetComponent<NetworkObject>().Spawn(true);
+        GameObject lineCompleteGameObject = Instantiate(lineCompletePrefab, GetGridWorldPosition(e.line.centerGridPosition.x, e.line.centerGridPosition.y), Quaternion.Euler(0,0,euleZ));
+        lineCompleteGameObject.transform.GetComponent<NetworkObject>().Spawn(true);
+
+        visualGameObjectList.Add(lineCompleteGameObject);
     }
 
     private void GameManager_OnClickedOnGridPosition(object sender, GameManager.ClickedOnGridPositionEventArgs e)
     {
-        Debug.Log("GameManager_OnClickedOnGridPosition");
         SpawnObjectRpc(e.x, e.y, e.playerType);
     }
 
@@ -68,6 +93,8 @@ public class GameVisualManager : NetworkBehaviour
 
         GameObject spawnedCrossObject = Instantiate(prefab, GetGridWorldPosition(x, y), Quaternion.identity);
         spawnedCrossObject.transform.GetComponent<NetworkObject>().Spawn(true);
+
+        visualGameObjectList.Add(spawnedCrossObject);
     }
 
     private Vector2 GetGridWorldPosition(int x, int y)
