@@ -30,6 +30,7 @@ public class GameManager : NetworkBehaviour
     private PlayerType localPlayerType;
     private NetworkVariable<PlayerType> currentPlayablePlayerType = new();
 
+    private PlayerType[,] playerTypeArray;
 
     private void Awake()
     {
@@ -41,6 +42,8 @@ public class GameManager : NetworkBehaviour
         {
             Debug.LogError("There is already a GameManager in the scene");
         }
+
+        playerTypeArray = new PlayerType[3,3];
     }
 
     public override void OnNetworkSpawn()
@@ -90,6 +93,11 @@ public class GameManager : NetworkBehaviour
         Debug.Log($"Clicked in X: {x} Y: {y} Player: {playerType}");
 
         if (playerType != currentPlayablePlayerType.Value) return; // Not the turn of the player
+
+        if (playerTypeArray[x, y] != PlayerType.None) return; // Already occupied
+
+        playerTypeArray[x, y] = playerType;
+
 
         OnClickedOnGridPosition?.Invoke(this, new ClickedOnGridPositionEventArgs { x = x, y = y, playerType = playerType });
 
