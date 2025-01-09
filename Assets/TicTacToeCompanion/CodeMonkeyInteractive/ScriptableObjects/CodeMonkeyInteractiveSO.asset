@@ -138,6 +138,18 @@ MonoBehaviour:
     state: 2
   - quizSO: {fileID: 11400000, guid: 783cc304ca1926040b0237e95d1159ff, type: 2}
     state: 2
+  - quizSO: {fileID: 11400000, guid: 39b30a7c8a60cec459fc635e79649871, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: f5b7e6aff9d2f8246b1c5449e989615b, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: c910300bb3aa9f740b912aed0f872639, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: dcc5dd0835ad121498b1a33bb912fad4, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 26d65278909a3724a887438e4c8fcdbf, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: a9a73ffc1cd25c84b8c1c166c171963d, type: 2}
+    state: 2
   frequentlyAskedQuestionStateList:
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 351da3a185159474aa34eb6900655117, type: 2}
     state: 2
@@ -253,22 +265,38 @@ MonoBehaviour:
     state: 2
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: e0ff2f511c0da56429a8a1af5f1b44d3, type: 2}
     state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: ecea4d7f5b4d7274cac51e260897c416, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 6d6c251b292aab347bf701f0c6ee4411, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: c8caa52d397af00449f4d3aebc9bc417, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: bd37aa8ab4d8c71459a25ffe4e2a41f5, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: dbe1208bac45eb049911b461862dbb0a, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: a124fe5121a48f947abc874013819e31, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: b39fe0fff829237479e8fd868f69804f, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 5f6b91947228ad14587f3961c5d7508f, type: 2}
+    state: 2
   exerciseStateList: []
   lectureListSO: {fileID: 11400000, guid: c1af4d7cadebe754fa5ac3880e0890f9, type: 2}
   defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
   activeExerciseSO: {fileID: 0}
-  lastSelectedLectureSO: {fileID: 11400000, guid: d937eb1957306814fa0fe6f2c1be9a67, type: 2}
-  checkedLastUpdateTimestamp: 1736377319
+  lastSelectedLectureSO: {fileID: 11400000, guid: c55e7087661ee6d46a0636a5eafefb5a, type: 2}
+  checkedLastUpdateTimestamp: 1736447590
   lastUpdateVersion: 1.00
   lastQOTDResponse:
-    questionId: 138
-    questionText: What is JSON and what is it useful for?
-    answerA: JavaScript Over Node, programming pattern
-    answerB: JavaScript Object Notation, data format
-    answerC: Jumping-Signal Over Nonce, crypto concept
+    questionId: 139
+    questionText: When you create a new script, do you always have to extend MonoBehaviour?
+    answerA: Yes
+    answerB: No
+    answerC: Only if you want to use it as a Game Object Component
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1736377319
+  lastQotdTimestamp: 1736447590
   websiteLatestMessage:
     text: 'Hi there!
 
@@ -284,11 +312,11 @@ MonoBehaviour:
 
       Join the <b>Private Discord</b> and <b>Weekly Private Livestreams</b>
       where I''m there to answer any questions you have.<br><a href=''https://cmonkey.co/tictactoeprivate''>https://cmonkey.co/tictactoeprivate</a>'
-  websiteLatestMessageTimestamp: 1736377319
+  websiteLatestMessageTimestamp: 1736447590
   websiteDynamicMessage:
     text: <u>Fresh Assets on Sale!</u>
     url: https://cmonkey.co/unityassetstore
-  websiteDynamicMessageTimestamp: 1736377319
+  websiteDynamicMessageTimestamp: 1736447590
   websiteLatestVideos:
     videos:
     - youTubeId: YmUnXsOp_t0
@@ -300,7 +328,7 @@ MonoBehaviour:
       title: The BEST of 2024!
     - youTubeId: 5xmbdWYlSkI
       title: TOP 20 Visual Assets to INSPIRE YOU! (DECEMBER 2024)
-  websiteLatestVideosTimestamp: 1736377319
+  websiteLatestVideosTimestamp: 1736447590
   lastChatAIQuestionAsked: What is Netcode for Game Objects?
   lastChatAIQuestionAnswer: 'Netcode for Game Objects is Unity''s own networking
     toolstack designed for small-scale co-op games. It''s the simplest networking
