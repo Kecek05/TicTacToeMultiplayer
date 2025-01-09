@@ -166,6 +166,20 @@ MonoBehaviour:
     state: 2
   - quizSO: {fileID: 11400000, guid: 2b3bebac27308254587da24621bbb380, type: 2}
     state: 2
+  - quizSO: {fileID: 11400000, guid: 16cd16bdd128c6e4581dca3f0cad34ab, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: d4b7c36e33bc66943b8e63d4791392b3, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: a885b5bdd03b29c4cae725e992f9db6b, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 517cad745395d27429f9f44ac9a95860, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 890f1e5ded68ea84a9fba15377c60989, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: d15b0b3ff02c0df45a496de772a87930, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 3d71aeabd22930b48a5791246fc44da2, type: 2}
+    state: 2
   frequentlyAskedQuestionStateList:
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 351da3a185159474aa34eb6900655117, type: 2}
     state: 2
@@ -315,11 +329,29 @@ MonoBehaviour:
     state: 2
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: fe267c2bf4ffc324999a5c6dbdd476ca, type: 2}
     state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 2aee39793d5da1244a370135fa28ce95, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: addb366fdf7a8b64ea94a59801f5bbe7, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: f776770c5d49d4548a1e211ae330825e, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 3a08fb1982bb38b4da2af4dca51a0eb6, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 9df30a3852c302d46abc84f6872802c9, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 387ebe8eaa3a4354daa6de16c1e9f097, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 916a9e612b0386842a6d4fa51d6bc328, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 312febd30111e4949bcf12d851dba36d, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: dee998297b3016e4fb0f87352890c765, type: 2}
+    state: 2
   exerciseStateList: []
   lectureListSO: {fileID: 11400000, guid: c1af4d7cadebe754fa5ac3880e0890f9, type: 2}
   defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
   activeExerciseSO: {fileID: 0}
-  lastSelectedLectureSO: {fileID: 11400000, guid: 54cc58ba6299f604089f0ee2bb0219eb, type: 2}
+  lastSelectedLectureSO: {fileID: 11400000, guid: e5b9f8782d10e1544904f911718a0bad, type: 2}
   checkedLastUpdateTimestamp: 1736447590
   lastUpdateVersion: 1.00
   lastQOTDResponse:

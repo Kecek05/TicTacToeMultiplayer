@@ -8,12 +8,37 @@ public class GameVisualManager : NetworkBehaviour
 
     [SerializeField] private GameObject crossPrefab;
     [SerializeField] private GameObject circlePrefab;
-
+    [SerializeField] private GameObject lineCompletePrefab;
 
 
     private void Start()
     {
-        GameManager.Instance.OnClickedOnGridPosition += GameManager_OnClickedOnGridPosition; ;
+        GameManager.Instance.OnClickedOnGridPosition += GameManager_OnClickedOnGridPosition;
+        GameManager.Instance.OnGameWin += GameManager_OnGameWin;
+    }
+
+    private void GameManager_OnGameWin(object sender, GameManager.OnGameWinEventArgs e)
+    {
+        float euleZ = 0f;
+        switch(e.line.orientation)
+        {
+            default:
+            case(GameManager.Orientation.Horizontal):
+                euleZ = 0f;
+                break;
+            case (GameManager.Orientation.Vertical):
+                euleZ = 90f;
+                break;
+            case (GameManager.Orientation.DiagonalA):
+                euleZ = 45f;
+                break;
+            case (GameManager.Orientation.DiagonalB):
+                euleZ = -45f;
+                break;
+
+        }
+        GameObject likneCompleteGameObject = Instantiate(lineCompletePrefab, GetGridWorldPosition(e.line.centerGridPosition.x, e.line.centerGridPosition.y), Quaternion.Euler(0,0,euleZ));
+        lineCompletePrefab.transform.GetComponent<NetworkObject>().Spawn(true);
     }
 
     private void GameManager_OnClickedOnGridPosition(object sender, GameManager.ClickedOnGridPositionEventArgs e)
