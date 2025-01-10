@@ -31,6 +31,7 @@ public class GameManager : NetworkBehaviour
     public event EventHandler OnRematch;
     public event EventHandler OnGameTied;
     public event EventHandler OnScoresChanged;
+    public event EventHandler OnPlacedObject;
 
     public enum PlayerType
     {
@@ -193,8 +194,8 @@ public class GameManager : NetworkBehaviour
         if (playerTypeArray[x, y] != PlayerType.None) return; // Already occupied
 
         playerTypeArray[x, y] = playerType;
-
-
+        TriggerOnPlacedObjectRpc();
+        
         OnClickedOnGridPosition?.Invoke(this, new ClickedOnGridPositionEventArgs { x = x, y = y, playerType = playerType });
 
         switch (currentPlayablePlayerType.Value)
@@ -209,6 +210,12 @@ public class GameManager : NetworkBehaviour
         }
 
         TestWinner();
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnPlacedObjectRpc()
+    {
+        OnPlacedObject?.Invoke(this, EventArgs.Empty);
     }
 
     [Rpc(SendTo.ClientsAndHost)]
