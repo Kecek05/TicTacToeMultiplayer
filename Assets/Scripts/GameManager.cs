@@ -30,6 +30,7 @@ public class GameManager : NetworkBehaviour
     public event EventHandler OnCurrentPlayablePlayerTypeChanged;
     public event EventHandler OnRematch;
     public event EventHandler OnGameTied;
+    public event EventHandler OnScoresChanged;
 
     public enum PlayerType
     {
@@ -58,6 +59,9 @@ public class GameManager : NetworkBehaviour
 
     private List<Line> lineList;
     private PlayerType[,] playerTypeArray;
+
+    private NetworkVariable<int> playerCrossScore = new();
+    private NetworkVariable<int> playerCircleScore = new();
 
     private void Awake()
     {
@@ -151,6 +155,15 @@ public class GameManager : NetworkBehaviour
             OnCurrentPlayablePlayerTypeChanged?.Invoke(this, EventArgs.Empty);
         };
 
+        playerCrossScore.OnValueChanged += (int oldScore, int newScore) =>
+        {
+            OnScoresChanged?.Invoke(this, EventArgs.Empty);
+        };
+
+        playerCircleScore.OnValueChanged += (int oldScore, int newScore) =>
+        {
+            OnScoresChanged?.Invoke(this, EventArgs.Empty);
+        };
 
     }
 
@@ -232,7 +245,18 @@ public class GameManager : NetworkBehaviour
             {
                 //Win!
                 currentPlayablePlayerType.Value = PlayerType.None;
-                TriggerOnGameWinRpc(i, playerTypeArray[line.centerGridPosition.x, line.centerGridPosition.y]);
+                PlayerType winPlayerType = playerTypeArray[line.centerGridPosition.x, line.centerGridPosition.y];
+                switch(winPlayerType)
+                {
+                    case PlayerType.Cross:
+                        playerCrossScore.Value++;
+                        break;
+                    case PlayerType.Circle:
+                        playerCircleScore.Value++;
+                        break;
+                }
+
+                TriggerOnGameWinRpc(i, winPlayerType);
                 return;
             }
         }
@@ -295,5 +319,11 @@ public class GameManager : NetworkBehaviour
     public PlayerType GetCurrentPlayablePlayerType()
     {
         return currentPlayablePlayerType.Value;
+    }
+
+    public void GetScores(out int playerCrossScore, out int playerCircleScore)
+    {
+        playerCrossScore = this.playerCrossScore.Value;
+        playerCircleScore = this.playerCircleScore.Value;
     }
 }
